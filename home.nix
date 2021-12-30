@@ -6,6 +6,10 @@
 
   home.stateVersion = "22.05";
 
+  imports = [
+    ./modules/neovim
+  ];
+
   home.packages = [
     pkgs.bottom
     pkgs.fd
@@ -55,24 +59,5 @@
     sessionVariables = {
       EDITOR = "nvim";
     };
-  };
-
-  programs.neovim = {
-    enable = true;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
-    plugins = with pkgs.vimPlugins; [
-      fugitive
-      gruvbox
-      vim-nix
-    ];
-
-    extraConfig = ''
-      set nocompatible
-      colorscheme gruvbox
-      set relativenumber
-      set number
-    '';
   };
 }
