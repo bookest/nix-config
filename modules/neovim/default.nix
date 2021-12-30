@@ -13,11 +13,12 @@
     ];
 
     extraConfig = ''
-      set nocompatible
-      colorscheme gruvbox
-      set relativenumber
-      set number
-      set scrolloff=7
+     lua require "_init"
     '';
+  };
+
+  xdg.configFile.nvim = {
+    source = ./config;
+    recursive = true;
   };
 }
