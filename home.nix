@@ -50,6 +50,7 @@
     enableSyntaxHighlighting = true;
     shellAliases = {
       "g" = "git";
+      "v" = "nvim";
     };
     sessionVariables = {
       EDITOR = "nvim";
