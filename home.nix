@@ -56,8 +56,5 @@
       "g" = "git";
       "v" = "nvim";
     };
-    sessionVariables = {
-      EDITOR = "nvim";
-    };
   };
 }
