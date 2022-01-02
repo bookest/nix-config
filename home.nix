@@ -46,6 +46,16 @@
       init.defaultBranch = "main";
     };
   };
+  
+  programs.tmux  =  {
+    enable = true;
+    baseIndex = 1;
+    clock24 = true;
+    customPaneNavigationAndResize = true;
+    keyMode = "vi";
+    prefix = "C-t";
+    terminal = "screen-256color";
+  };
 
   programs.zsh = {
     enable = true;
