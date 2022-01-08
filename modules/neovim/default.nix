@@ -15,6 +15,7 @@
       fugitive
       gitsigns-nvim
       gruvbox
+      telescope-nvim
       vim-nix
     ];
 
