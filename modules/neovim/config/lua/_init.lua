@@ -24,6 +24,8 @@ vim.cmd [[colorscheme gruvbox]]
 vim.cmd [[syntax enable]]
 vim.cmd [[filetype plugin indent on]]
 
+local opts = { noremap = true, silent = true }
+
 require("gitsigns").setup {
   signs = {
     add = {h1 = 'GitSignsAdd', text = '+', numhl='GitSignsAddNr', linehl='GitSignsAddLn'},
@@ -43,7 +45,52 @@ require("gitsigns").setup {
 }
 
 require('telescope').setup()
-vim.api.nvim_set_keymap('n', '<C-p>', [[<Cmd>lua require('telescope.builtin').git_files()<CR>]], {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>fg', [[<Cmd>lua require('telescope.builtin').live_grep()<CR>]], {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>fb', [[<Cmd>lua require('telescope.builtin').buffers()<CR>]], {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>fh', [[<Cmd>lua require('telescope.builtin').help_tags()<CR>]], {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<C-p>', [[<Cmd>lua require('telescope.builtin').git_files()<CR>]], opts)
+vim.api.nvim_set_keymap('n', '<leader>fg', [[<Cmd>lua require('telescope.builtin').live_grep()<CR>]], opts)
+vim.api.nvim_set_keymap('n', '<leader>fb', [[<Cmd>lua require('telescope.builtin').buffers()<CR>]], opts)
+vim.api.nvim_set_keymap('n', '<leader>fh', [[<Cmd>lua require('telescope.builtin').help_tags()<CR>]], opts)
+
+local lspconfig = require('lspconfig')
+local on_attach = function(_, bufnr)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', [[<Cmd>lua vim.lsp.buf.code_action()<CR>]], opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>fs', [[<Cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', [[<Cmd>lua vim.lsp.buf.rename()<CR>]], opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', [[<Cmd>lua vim.lsp.buf.hover()<CR>]], opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d', [[<Cmd>lua vim.diagnostic.goto_prev()<CR>]], opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', ']d', [[<Cmd>lua vim.diagnostic.goto_next()<CR>]], opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', [[<Cmd>lua vim.lsp.buf.definition()<CR>]], opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', [[<Cmd>lua vim.lsp.buf.implementation()<CR>]], opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', [[<Cmd>lua vim.lsp.buf.references()<CR>]], opts)
+end
+
+local servers = { 'bashls', 'gopls', 'pyright', 'rnix', 'tsserver' }
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    on_attach = on_attach,
+  }
+end
+
+local runtime_path = vim.split(package.path, ';')
+table.insert(runtime_path, "lua/?.lua")
+table.insert(runtime_path, "lua/?/init.lua")
+
+lspconfig.sumneko_lua.setup {
+  on_attach = on_attach,
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT',
+        path = runtime_path,
+      },
+      diagnostics = {
+        globals = {'vim'},
+      },
+      workspace = {
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}

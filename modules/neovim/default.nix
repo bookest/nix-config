@@ -6,6 +6,15 @@
     VISUAL = "nvim";
   };
 
+  home.packages = [
+    pkgs.gopls
+    pkgs.nodePackages.bash-language-server
+    pkgs.nodePackages.pyright
+    pkgs.nodePackages.typescript-language-server
+    pkgs.rnix-lsp
+    pkgs.sumneko-lua-language-server
+  ];
+
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -15,12 +24,14 @@
       fugitive
       gitsigns-nvim
       gruvbox
+      nvim-lspconfig
       telescope-nvim
       vim-nix
+      vim-polyglot
     ];
 
     extraConfig = ''
-     lua require "_init"
+      lua require "_init"
     '';
   };
 
