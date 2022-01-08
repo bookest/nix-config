@@ -64,6 +64,7 @@
     enableSyntaxHighlighting = true;
     shellAliases = {
       "g" = "git";
+      "hm" = "home-manager";
       "v" = "nvim";
     };
   };
