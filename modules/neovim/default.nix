@@ -13,6 +13,7 @@
     vimdiffAlias = true;
     plugins = with pkgs.vimPlugins; [
       fugitive
+      gitsigns-nvim
       gruvbox
       vim-nix
     ];
