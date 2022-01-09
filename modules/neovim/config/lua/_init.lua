@@ -26,6 +26,8 @@ vim.cmd [[filetype plugin indent on]]
 
 local opts = { noremap = true, silent = true }
 
+vim.api.nvim_set_keymap('v', '<leader>ss', [[:sort<CR>]], opts)
+
 require("gitsigns").setup {
   signs = {
     add = {h1 = 'GitSignsAdd', text = '+', numhl='GitSignsAddNr', linehl='GitSignsAddLn'},
