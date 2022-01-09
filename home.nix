@@ -46,8 +46,8 @@
       init.defaultBranch = "main";
     };
   };
-  
-  programs.tmux  =  {
+
+  programs.tmux = {
     enable = true;
     baseIndex = 1;
     clock24 = true;
@@ -67,5 +67,16 @@
       "hm" = "home-manager";
       "v" = "nvim";
     };
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+    tmux.enableShellIntegration = true;
   };
 }
