@@ -24,6 +24,7 @@
       fugitive
       gitsigns-nvim
       gruvbox
+      lualine-nvim
       nvim-lspconfig
       telescope-nvim
       vim-nix
