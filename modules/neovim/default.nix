@@ -21,10 +21,15 @@
     vimAlias = true;
     vimdiffAlias = true;
     plugins = with pkgs.vimPlugins; [
+      cmp-nvim-lsp
+      cmp-nvim-lua
+      cmp_luasnip
       fugitive
       gitsigns-nvim
       gruvbox
       lualine-nvim
+      luasnip
+      nvim-cmp
       nvim-lspconfig
       telescope-nvim
       vim-nix

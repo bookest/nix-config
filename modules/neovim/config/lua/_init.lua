@@ -65,10 +65,15 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', [[<Cmd>lua vim.lsp.buf.references()<CR>]], opts)
 end
 
+local capabilities = require('cmp_nvim_lsp').update_capabilities(
+  vim.lsp.protocol.make_client_capabilities()
+)
+
 local servers = { 'bashls', 'gopls', 'pyright', 'rnix', 'tsserver' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
+    capabilities = capabilities,
   }
 end
 
@@ -78,6 +83,7 @@ table.insert(runtime_path, "lua/?/init.lua")
 
 lspconfig.sumneko_lua.setup {
   on_attach = on_attach,
+  capabilities = capabilities,
   settings = {
     Lua = {
       runtime = {
@@ -97,6 +103,28 @@ lspconfig.sumneko_lua.setup {
   },
 }
 
+local cmp = require('cmp')
+cmp.setup {
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
+  },
+  mapping = {
+    ['C-p'] = cmp.mapping.select_prev_item(),
+    ['C-n'] = cmp.mapping.select_next_item(),
+    ['<CR>'] = cmp.mapping.confirm {
+      select = true,
+    },
+  },
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'nvim_lua' },
+    { name = 'luasnip' },
+    { name = 'buffer' },
+  },
+}
+
 require('lualine').setup {
   options = {
     icons_enabled = false,
@@ -105,3 +133,4 @@ require('lualine').setup {
     section_separators = '',
   },
 }
+
