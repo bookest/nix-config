@@ -16,5 +16,8 @@ in
     keyMode = "vi";
     prefix = "C-t";
     terminal = "screen-256color";
+    plugins = [
+      pkgs.tmuxPlugins.gruvbox
+    ];
   };
 }
