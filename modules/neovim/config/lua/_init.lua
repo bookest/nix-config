@@ -8,9 +8,9 @@ vim.g.hidden = true
 vim.g.signcolumn = true
 vim.g.smartindent = true
 vim.g.spell = true
-vim.g.spelllang = "en_us"
+vim.g.spelllang = 'en_us'
 vim.g.termguicolors = true
-vim.g.undodir = vim.fn.expand("~/.config/nvim/undo")
+vim.g.undodir = vim.fn.expand '~/.config/nvim/undo'
 vim.g.undofile = true
 vim.g.updatetime = 500
 
@@ -28,13 +28,13 @@ local opts = { noremap = true, silent = true }
 
 vim.api.nvim_set_keymap('v', '<leader>ss', [[:sort<CR>]], opts)
 
-require("gitsigns").setup {
+require('gitsigns').setup {
   signs = {
-    add = {h1 = 'GitSignsAdd', text = '+', numhl='GitSignsAddNr', linehl='GitSignsAddLn'},
-    change = {h1 = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
-    delete = {h1 = 'GitSignsDelete', text = '-', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-    topdelete = {h1 = 'GitSignsAdd', text = '-', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-    changedelete = {h1 = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+    add = { h1 = 'GitSignsAdd', text = '+', numhl = 'GitSignsAddNr', linehl = 'GitSignsAddLn' },
+    change = { h1 = 'GitSignsChange', text = '~', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn' },
+    delete = { h1 = 'GitSignsDelete', text = '-', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
+    topdelete = { h1 = 'GitSignsAdd', text = '-', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
+    changedelete = { h1 = 'GitSignsChange', text = '~', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn' },
   },
   signcolumn = true,
   current_line_blame = true,
@@ -52,10 +52,9 @@ vim.api.nvim_set_keymap('n', '<leader>fg', [[<Cmd>lua require('telescope.builtin
 vim.api.nvim_set_keymap('n', '<leader>fb', [[<Cmd>lua require('telescope.builtin').buffers()<CR>]], opts)
 vim.api.nvim_set_keymap('n', '<leader>fh', [[<Cmd>lua require('telescope.builtin').help_tags()<CR>]], opts)
 
-local lspconfig = require('lspconfig')
+local lspconfig = require 'lspconfig'
 local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', [[<Cmd>lua vim.lsp.buf.code_action()<CR>]], opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>fs', [[<Cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', [[<Cmd>lua vim.lsp.buf.rename()<CR>]], opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', [[<Cmd>lua vim.lsp.buf.hover()<CR>]], opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d', [[<Cmd>lua vim.diagnostic.goto_prev()<CR>]], opts)
@@ -63,11 +62,16 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', [[<Cmd>lua vim.lsp.buf.definition()<CR>]], opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', [[<Cmd>lua vim.lsp.buf.implementation()<CR>]], opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', [[<Cmd>lua vim.lsp.buf.references()<CR>]], opts)
+  vim.api.nvim_buf_set_keymap(
+    bufnr,
+    'n',
+    '<leader>fs',
+    [[<Cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]],
+    opts
+  )
 end
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(
-  vim.lsp.protocol.make_client_capabilities()
-)
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local servers = { 'bashls', 'gopls', 'pyright', 'rnix', 'tsserver' }
 for _, lsp in ipairs(servers) do
@@ -78,8 +82,8 @@ for _, lsp in ipairs(servers) do
 end
 
 local runtime_path = vim.split(package.path, ';')
-table.insert(runtime_path, "lua/?.lua")
-table.insert(runtime_path, "lua/?/init.lua")
+table.insert(runtime_path, 'lua/?.lua')
+table.insert(runtime_path, 'lua/?/init.lua')
 
 lspconfig.sumneko_lua.setup {
   on_attach = on_attach,
@@ -91,10 +95,10 @@ lspconfig.sumneko_lua.setup {
         path = runtime_path,
       },
       diagnostics = {
-        globals = {'vim'},
+        globals = { 'vim' },
       },
       workspace = {
-        library = vim.api.nvim_get_runtime_file("", true),
+        library = vim.api.nvim_get_runtime_file('', true),
       },
       telemetry = {
         enable = false,
@@ -103,7 +107,7 @@ lspconfig.sumneko_lua.setup {
   },
 }
 
-local cmp = require('cmp')
+local cmp = require 'cmp'
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -133,4 +137,3 @@ require('lualine').setup {
     section_separators = '',
   },
 }
-
