@@ -14,5 +14,8 @@
     extraConfig = {
       init.defaultBranch = "main";
     };
+    ignores = [
+      ".envrc" 
+    ];
   };
 }
