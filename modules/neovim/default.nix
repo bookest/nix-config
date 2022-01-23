@@ -21,6 +21,7 @@
     vimAlias = true;
     vimdiffAlias = true;
     plugins = with pkgs.vimPlugins; [
+      cmp-buffer
       cmp-nvim-lsp
       cmp-nvim-lua
       cmp_luasnip
