@@ -109,6 +109,17 @@ lspconfig.sumneko_lua.setup {
 
 local cmp = require 'cmp'
 cmp.setup {
+  formatting = {
+    format = function(entry, vim_item)
+      vim_item.menu = ({
+        buffer = '[Buffer]',
+        luasnip = '[LuaSnip]',
+        nvim_lsp = '[LSP]',
+        nvim_lua = '[Lua]',
+      })[entry.source.name]
+      return vim_item
+    end,
+  },
   snippet = {
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
