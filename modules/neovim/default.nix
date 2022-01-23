@@ -26,7 +26,7 @@
       cmp_luasnip
       fugitive
       gitsigns-nvim
-      gruvbox
+      gruvbox-material
       lualine-nvim
       luasnip
       nvim-cmp
