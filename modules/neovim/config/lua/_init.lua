@@ -148,3 +148,9 @@ require('lualine').setup {
     section_separators = '',
   },
 }
+
+require('nvim-treesitter.configs').setup {
+  highlight = {
+    enable = true,
+  },
+}
