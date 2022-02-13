@@ -5,8 +5,6 @@
   home.homeDirectory = "/Users/grim";
   home.stateVersion = "22.05";
 
-  programs.home-manager.enable = true;
-
   imports = [
     ./modules/git
     ./modules/neovim
