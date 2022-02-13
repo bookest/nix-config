@@ -26,8 +26,10 @@
       nvim-cmp
       nvim-lspconfig
       telescope-nvim
+      vim-commentary
       vim-nix
       vim-polyglot
+      vim-surround
     ];
 
     extraConfig = ''
