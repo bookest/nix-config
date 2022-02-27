@@ -18,6 +18,7 @@
       cmp-nvim-lua
       cmp_luasnip
       direnv-vim
+      fidget-nvim
       fugitive
       gitsigns-nvim
       gruvbox-material

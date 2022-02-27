@@ -107,6 +107,8 @@ lspconfig.sumneko_lua.setup {
   },
 }
 
+require('fidget').setup {}
+
 local cmp = require 'cmp'
 cmp.setup {
   formatting = {
