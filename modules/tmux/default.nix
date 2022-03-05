@@ -2,7 +2,7 @@
 
 let
   inherit (pkgs.stdenv) isDarwin;
-  scripts = import ./scripts.nix { pkgs = pkgs; };
+  scripts = import ./scripts.nix { inherit pkgs; };
 in
 {
   home.packages = [
