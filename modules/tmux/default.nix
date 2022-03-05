@@ -2,10 +2,12 @@
 
 let
   inherit (pkgs.stdenv) isDarwin;
+  scripts = import ./scripts.nix { pkgs = pkgs; };
 in
 {
   home.packages = [
     pkgs.fzf
+    scripts.tmx-attach
   ] ++ lib.optional isDarwin pkgs.reattach-to-user-namespace;
 
   programs.tmux = {
