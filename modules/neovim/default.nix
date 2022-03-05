@@ -27,6 +27,7 @@
       nvim-cmp
       nvim-lspconfig
       telescope-nvim
+      vim-better-whitespace
       vim-commentary
       vim-nix
       vim-polyglot
