@@ -26,7 +26,7 @@ in
   };
 
   programs.starship = {
-    enable = true;
+    enable = false;
     settings = starship.settings;
   };
 
