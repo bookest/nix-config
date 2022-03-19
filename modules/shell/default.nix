@@ -27,7 +27,7 @@ in
 
   programs.starship = {
     enable = false;
-    settings = starship.settings;
+    inherit (starship) settings;
   };
 
   programs.zsh = {
