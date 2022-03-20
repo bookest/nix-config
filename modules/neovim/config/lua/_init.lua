@@ -5,7 +5,6 @@ vim.g.mapleader = ' '
 vim.g.autoindent = true
 vim.g.expandtab = true
 vim.g.hidden = true
-vim.g.signcolumn = true
 vim.g.smartindent = true
 vim.g.spell = true
 vim.g.spelllang = 'en_us'
@@ -19,6 +18,7 @@ vim.o.scrolloff = 7
 
 vim.wo.number = true
 vim.wo.relativenumber = true
+vim.wo.signcolumn = 'yes'
 
 vim.cmd [[colorscheme gruvbox-material]]
 vim.cmd [[syntax enable]]
