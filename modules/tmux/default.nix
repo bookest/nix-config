@@ -15,6 +15,7 @@ in
     baseIndex = 1;
     clock24 = true;
     customPaneNavigationAndResize = true;
+    escapeTime = 10;
     keyMode = "vi";
     prefix = "C-t";
     terminal = "screen-256color";
