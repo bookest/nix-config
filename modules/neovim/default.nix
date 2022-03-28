@@ -44,6 +44,7 @@
       pkgs.nodePackages.pyright
       pkgs.nodePackages.typescript-language-server
       pkgs.rnix-lsp
+      pkgs.rust-analyzer
       pkgs.sumneko-lua-language-server
     ];
   };
