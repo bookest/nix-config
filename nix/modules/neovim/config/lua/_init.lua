@@ -148,6 +148,7 @@ require('lualine').setup {
     theme = 'gruvbox',
     component_seperators = '|',
     section_separators = '',
+    globalstatus = true,
   },
 }
 
