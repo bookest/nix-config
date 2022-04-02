@@ -6,10 +6,10 @@
   home.stateVersion = "22.05";
 
   imports = [
-    ./modules/git
-    ./modules/neovim
-    ./modules/shell
-    ./modules/tmux
+    ./nix/modules/git
+    ./nix/modules/neovim
+    ./nix/modules/shell
+    ./nix/modules/tmux
   ];
 
   home.packages = [
