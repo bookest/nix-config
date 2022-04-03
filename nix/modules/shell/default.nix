@@ -40,6 +40,18 @@ in
       "hm" = "home-manager";
       "v" = "nvim";
     };
+    localVariables = {
+      ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX="YES";
+    };
+    plugins = [
+      {
+        name = "iterm2_shell_integration";
+        src = pkgs.fetchurl {
+          url = "https://iterm2.com/shell_integration/zsh";
+          sha256 = "sha256-BAeXhk5lkULawozk2oDFek7gh6JhPCG2+ypqUoHl92Q=";
+        };
+      }
+    ];
   };
 
   programs.zoxide = {
