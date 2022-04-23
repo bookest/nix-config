@@ -46,6 +46,7 @@
 
     extraPackages = [
       pkgs.gopls
+      pkgs.kotlin-language-server
       pkgs.nodePackages.bash-language-server
       pkgs.nodePackages.pyright
       pkgs.nodePackages.typescript-language-server
