@@ -26,7 +26,7 @@ in
   };
 
   programs.starship = {
-    enable = false;
+    enable = true;
     inherit (starship) settings;
   };
 
