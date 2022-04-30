@@ -18,6 +18,7 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 local servers = {
   'bashls',
   'clangd',
+  'eslint',
   'gopls',
   'kotlin_language_server',
   'pyright',
