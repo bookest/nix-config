@@ -41,7 +41,7 @@
     ];
 
     extraConfig = ''
-      lua require "_init"
+      lua require('bookest')
     '';
 
     extraPackages = [
