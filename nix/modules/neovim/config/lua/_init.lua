@@ -24,9 +24,9 @@ vim.cmd [[colorscheme gruvbox-material]]
 vim.cmd [[syntax enable]]
 vim.cmd [[filetype plugin indent on]]
 
-local opts = { noremap = true, silent = true }
+local silent = { silent = true }
 
-vim.api.nvim_set_keymap('v', '<leader>ss', [[:sort<CR>]], opts)
+vim.keymap.set('v', '<leader>ss', [[:sort<CR>]])
 
 require('gitsigns').setup {
   signs = {
@@ -47,28 +47,23 @@ require('gitsigns').setup {
 }
 
 require('telescope').setup()
-vim.api.nvim_set_keymap('n', '<C-p>', [[<Cmd>lua require('telescope.builtin').git_files()<CR>]], opts)
-vim.api.nvim_set_keymap('n', '<leader>fg', [[<Cmd>lua require('telescope.builtin').live_grep()<CR>]], opts)
-vim.api.nvim_set_keymap('n', '<leader>fb', [[<Cmd>lua require('telescope.builtin').buffers()<CR>]], opts)
-vim.api.nvim_set_keymap('n', '<leader>fh', [[<Cmd>lua require('telescope.builtin').help_tags()<CR>]], opts)
+vim.keymap.set('n', '<C-p>', require('telescope.builtin').git_files, silent)
+vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, silent)
+vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, silent)
+vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, silent)
 
 local lspconfig = require 'lspconfig'
 local on_attach = function(_, bufnr)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', [[<Cmd>lua vim.lsp.buf.code_action()<CR>]], opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', [[<Cmd>lua vim.lsp.buf.rename()<CR>]], opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', [[<Cmd>lua vim.lsp.buf.hover()<CR>]], opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d', [[<Cmd>lua vim.diagnostic.goto_prev()<CR>]], opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', ']d', [[<Cmd>lua vim.diagnostic.goto_next()<CR>]], opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', [[<Cmd>lua vim.lsp.buf.definition()<CR>]], opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', [[<Cmd>lua vim.lsp.buf.implementation()<CR>]], opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', [[<Cmd>lua vim.lsp.buf.references()<CR>]], opts)
-  vim.api.nvim_buf_set_keymap(
-    bufnr,
-    'n',
-    '<leader>fs',
-    [[<Cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]],
-    opts
-  )
+  local opts = { silent = true, buffer = bufnr }
+  vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+  vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+  vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+  vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+  vim.keymap.set('n', '<leader>fs', require('telescope.builtin').lsp_document_symbols, opts)
 end
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
