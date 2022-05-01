@@ -1,5 +1,18 @@
 { config, pkgs, ... }:
 
+let
+  stylua-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "stylua-nvim";
+    # TODO: Switch back to ckipp01/stylua-nvim once
+    # https://github.com/ckipp01/stylua-nvim/pull/13 is merged.
+    src = pkgs.fetchFromGitHub {
+      owner = "bookest";
+      repo = "stylua-nvim";
+      rev = "47742f9294476613ae5d50d4e1031e3576963632";
+      sha256 = "sha256-GfqzyJTpwrh1NZqA7rVQ8TW6CYQL7F0/lUjZL5wZyeI=";
+    };
+  };
+in
 {
   nixpkgs.overlays = [
     (import (builtins.fetchTarball {
@@ -32,6 +45,7 @@
       luasnip
       nvim-cmp
       nvim-lspconfig
+      stylua-nvim
       telescope-nvim
       vim-better-whitespace
       vim-commentary
