@@ -39,6 +39,7 @@ in
       fugitive
       gitsigns-nvim
       gruvbox-material
+      harpoon
       lualine-nvim
       luasnip
       nvim-cmp

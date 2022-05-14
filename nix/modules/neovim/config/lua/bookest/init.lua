@@ -26,9 +26,10 @@ vim.cmd [[filetype plugin indent on]]
 
 vim.keymap.set('v', '<leader>ss', [[:sort<CR>]], { silent = true })
 
-require 'bookest.gitsigns'
-require 'bookest.telescope'
-require 'bookest.lsp'
 require 'bookest.cmp'
+require 'bookest.gitsigns'
+require 'bookest.harpoon'
+require 'bookest.lsp'
 require 'bookest.lualine'
+require 'bookest.telescope'
 require 'bookest.treesitter'
