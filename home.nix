@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "grim";
-  home.homeDirectory = "/Users/grim";
+  home.username = builtins.getEnv "USER";
+  home.homeDirectory = builtins.getEnv "HOME";
   home.stateVersion = "22.05";
 
   imports = [
