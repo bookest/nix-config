@@ -1,5 +1,3 @@
-local lspconfig = require 'lspconfig'
-
 local on_attach = function(_, bufnr)
   local opts = { silent = true, buffer = bufnr }
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
@@ -24,39 +22,11 @@ local servers = {
   'pyright',
   'rnix',
   'rust_analyzer',
+  'sumneko_lua',
   'tsserver',
 }
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-  }
+for _, server in ipairs(servers) do
+  require('bookest.lsp.servers.' .. server).setup(on_attach, capabilities)
 end
-
-local runtime_path = vim.split(package.path, ';')
-table.insert(runtime_path, 'lua/?.lua')
-table.insert(runtime_path, 'lua/?/init.lua')
-
-lspconfig.sumneko_lua.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    Lua = {
-      runtime = {
-        version = 'LuaJIT',
-        path = runtime_path,
-      },
-      diagnostics = {
-        globals = { 'vim' },
-      },
-      workspace = {
-        library = vim.api.nvim_get_runtime_file('', true),
-      },
-      telemetry = {
-        enable = false,
-      },
-    },
-  },
-}
 
 require('fidget').setup {}
