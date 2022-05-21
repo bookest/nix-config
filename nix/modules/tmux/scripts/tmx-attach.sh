@@ -20,7 +20,7 @@ create_detached_session() {
 
 session_exists || create_detached_session
 
-if [ -z "$TMUX" ]; then
+if [ -z "${TMUX-}" ]; then
   tmux attach -t "$SESSION_NAME"
 else
   tmux switch-client -t "$SESSION_NAME"
