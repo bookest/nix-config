@@ -1,16 +1,8 @@
 { config, pkgs, ... }:
 
 let
-  stylua-nvim = pkgs.vimUtils.buildVimPlugin {
-    name = "stylua-nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "ckipp01";
-      repo = "stylua-nvim";
-      rev = "ce59a353f02938cba3e0285e662fcd3901cd270f";
-      sha256 = "sha256-GfqzyJTpwrh1NZqA7rVQ8TW6CYQL7F0/lUjZL5wZyeI=";
-    };
-  };
   customNodePackages = import ../nodejs/default.nix {};
+  customVimPlugins = import ./plugins/default.nix {};
 in
 {
   nixpkgs.overlays = [
@@ -36,6 +28,7 @@ in
       cmp-nvim-lua
       cmp-spell
       cmp_luasnip
+      customVimPlugins.stylua-nvim
       direnv-vim
       fidget-nvim
       fugitive
@@ -46,7 +39,6 @@ in
       luasnip
       nvim-cmp
       nvim-lspconfig
-      stylua-nvim
       telescope-nvim
       vim-better-whitespace
       vim-commentary
