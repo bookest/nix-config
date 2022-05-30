@@ -2,11 +2,15 @@
 
 let
   starship = import ./starship.nix { inherit pkgs; };
+  sources = import ../../sources.nix;
+  comma = (import sources.comma).default;
 in
 {
   home.packages = [
+    comma
     pkgs.bottom
     pkgs.fd
+    pkgs.nix-index
     pkgs.ripgrep
   ];
 

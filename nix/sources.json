@@ -1,4 +1,16 @@
 {
+    "comma": {
+        "branch": "master",
+        "description": "Comma runs software without installing it. [maintainers=@Artturin,@burke,@DavHau]",
+        "homepage": "",
+        "owner": "nix-community",
+        "repo": "comma",
+        "rev": "034a9ca440370fc1eccbed43ff345fb6ea1f0d27",
+        "sha256": "024mwbhwps7gv2xwkry3d358q528yxjbkkrnl769dg580a50p509",
+        "type": "tarball",
+        "url": "https://github.com/nix-community/comma/archive/034a9ca440370fc1eccbed43ff345fb6ea1f0d27.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "home-manager": {
         "branch": "master",
         "description": "Manage a user environment using Nix",
