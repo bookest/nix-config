@@ -10,6 +10,7 @@ let
       sha256 = "sha256-GfqzyJTpwrh1NZqA7rVQ8TW6CYQL7F0/lUjZL5wZyeI=";
     };
   };
+  customNodePackages = import ../nodejs/default.nix {};
 in
 {
   nixpkgs.overlays = [
@@ -59,14 +60,15 @@ in
     '';
 
     extraPackages = [
+      customNodePackages.bash-language-server
       pkgs.gopls
       pkgs.kotlin-language-server
-      pkgs.nodePackages.bash-language-server
       pkgs.nodePackages.pyright
       pkgs.nodePackages.typescript-language-server
       pkgs.nodePackages.vscode-langservers-extracted
       pkgs.rnix-lsp
       pkgs.rust-analyzer
+      pkgs.shellcheck
       pkgs.sumneko-lua-language-server
     ];
   };

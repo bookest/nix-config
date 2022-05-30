@@ -15,6 +15,9 @@ in {
         language = "system";
       };
     };
-    settings.statix.ignore = [ "sources.nix" ];
+    settings.statix.ignore = [
+      "node-env.nix"
+      "sources.nix"
+    ];
   };
 }
