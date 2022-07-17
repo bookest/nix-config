@@ -15,4 +15,9 @@
   home.packages = [
     pkgs.lorri
   ];
+
+  nixpkgs.config = {
+    allowUnsupportedSystem = true;
+    allowBroken = true;
+  };
 }
