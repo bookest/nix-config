@@ -8,12 +8,7 @@ in {
     hooks = {
       shellcheck.enable = true;
       statix.enable = true;
-      stylua = {
-        enable = true;
-        entry = "${pkgs.stylua}/bin/stylua --check";
-        types = [ "file" "lua" ];
-        language = "system";
-      };
+      stylua.enable = true;
     };
     settings.statix.ignore = [
       "node-env.nix"
