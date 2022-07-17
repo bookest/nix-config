@@ -15,7 +15,9 @@
       init.defaultBranch = "main";
     };
     ignores = [
-      ".envrc" 
+      ".envrc"
     ];
   };
+
+  programs.gh.enable = true;
 }
