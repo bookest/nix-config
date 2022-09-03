@@ -26,7 +26,6 @@ in
       cmp-buffer
       cmp-nvim-lsp
       cmp-nvim-lua
-      cmp-spell
       cmp_luasnip
       customVimPlugins.stylua-nvim
       direnv-vim
