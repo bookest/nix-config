@@ -35,15 +35,18 @@ in
       gitsigns-nvim
       gruvbox-material
       harpoon
+      kotlin-vim
       lualine-nvim
       luasnip
       nvim-cmp
       nvim-lspconfig
+      rust-vim
       telescope-nvim
+      typescript-vim
       vim-better-whitespace
       vim-commentary
+      vim-go
       vim-nix
-      vim-polyglot
       vim-surround
     ];
 

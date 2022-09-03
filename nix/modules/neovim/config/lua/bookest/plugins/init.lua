@@ -1,5 +1,5 @@
 require 'bookest.plugins.cmp'
-require 'bookest.plugins.gitsigns'
+-- require 'bookest.plugins.gitsigns'
 require 'bookest.plugins.harpoon'
 require 'bookest.plugins.lualine'
 require 'bookest.plugins.telescope'
