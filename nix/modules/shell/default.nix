@@ -48,7 +48,6 @@ in
       ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX="YES";
     };
     envExtra = ''
-      echo "LOADING ~/.zshenv"
       . "${config.home.profileDirectory}/etc/profile.d/nix.sh"
       . "${config.home.profileDirectory}/etc/profile.d/nix-daemon.sh"
     '' ;
