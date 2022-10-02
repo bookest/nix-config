@@ -43,8 +43,8 @@ require('gitsigns').setup {
     local gitsigns = package.loaded.gitsigns
     local opts = { buffer = bufnr }
 
-    vim.keymap.set('n', ']c', gitsigns.next_hunk, opts)
-    vim.keymap.set('n', '[c', gitsigns.prev_hunk, opts)
+    vim.keymap.set('n', ']h', gitsigns.next_hunk, opts)
+    vim.keymap.set('n', '[h', gitsigns.prev_hunk, opts)
     vim.keymap.set({ 'n', 'v' }, '<leader>hs', ':Gitsigns stage_hunk<CR>', opts)
     vim.keymap.set({ 'n', 'v' }, '<leader>hr', ':Gitsigns reset_hunk<CR>', opts)
     vim.keymap.set('n', '<leader>hS', gitsigns.stage_buffer, opts)
