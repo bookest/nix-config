@@ -5,7 +5,8 @@
 
 {
   stylua-nvim = pkgs.vimUtils.buildVimPlugin {
-    name = "stylua-nvim";
+    pname = "stylua-nvim";
+    version = "2022-05-05";
     src = pkgs.fetchFromGitHub {
       owner = "ckipp01";
       repo = "stylua-nvim";
