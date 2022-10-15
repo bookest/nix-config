@@ -20,9 +20,8 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.signcolumn = 'yes'
 
-vim.cmd [[colorscheme gruvbox-material]]
-vim.cmd [[syntax enable]]
-vim.cmd [[filetype plugin indent on]]
+vim.cmd.colorscheme 'gruvbox-material'
+vim.cmd.syntax 'enable'
 
 vim.keymap.set('v', '<leader>ss', [[:sort<CR>]], { silent = true })
 
