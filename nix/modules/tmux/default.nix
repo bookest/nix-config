@@ -22,5 +22,8 @@ in
     plugins = [
       pkgs.tmuxPlugins.gruvbox
     ];
+    extraConfig = ''
+      set-option -sa terminal-overrides ',screen-256color:RGB'
+    '';
   };
 }
