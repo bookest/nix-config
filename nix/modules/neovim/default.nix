@@ -34,6 +34,7 @@ in
       gitsigns-nvim
       gruvbox-material
       harpoon
+      haskell-vim
       kotlin-vim
       lualine-nvim
       luasnip
@@ -56,6 +57,7 @@ in
     extraPackages = [
       customNodePackages.bash-language-server
       pkgs.gopls
+      pkgs.haskell-language-server
       pkgs.kotlin-language-server
       pkgs.nodePackages.pyright
       pkgs.nodePackages.typescript-language-server

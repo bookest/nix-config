@@ -18,6 +18,7 @@ local servers = {
   'clangd',
   'eslint',
   'gopls',
+  'hls',
   'kotlin_language_server',
   'pyright',
   'rnix',
