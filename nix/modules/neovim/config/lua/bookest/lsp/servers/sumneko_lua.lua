@@ -21,6 +21,7 @@ M.setup = function(on_attach, capabilities)
         },
         workspace = {
           library = vim.api.nvim_get_runtime_file('', true),
+          checkThirdParty = false,
         },
         telemetry = {
           enable = false,
