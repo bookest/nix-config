@@ -15,6 +15,7 @@
       init.defaultBranch = "main";
     };
     ignores = [
+      ".direnv"
       ".envrc"
     ];
   };
