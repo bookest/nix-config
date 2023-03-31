@@ -5,16 +5,11 @@ let
   customVimPlugins = import ./plugins/default.nix {};
 in
 {
-  # Disable neovim-nightly-overlay until build issue with current
-  # nixpkgs-unstable is fixed:
-  #
-  # https://github.com/nix-community/neovim-nightly-overlay/issues/164
-  #
-  # nixpkgs.overlays = [
-  #   (import (builtins.fetchTarball {
-  #     url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
-  #   }))
-  # ];
+  nixpkgs.overlays = [
+    (import (builtins.fetchTarball {
+      url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
+    }))
+  ];
 
   home.sessionVariables = {
     EDITOR = "nvim";
