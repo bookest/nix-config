@@ -5,11 +5,15 @@ let
   customVimPlugins = import ./plugins/default.nix {};
 in
 {
-  nixpkgs.overlays = [
-    (import (builtins.fetchTarball {
-      url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
-    }))
-  ];
+  # Disable neovim nightly until tree-sitter is updated in nixpkgs.
+  #
+  # https://github.com/NixOS/nixpkgs/pull/225152
+  #
+  # nixpkgs.overlays = [
+  #   (import (builtins.fetchTarball {
+  #     url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
+  #   }))
+  # ];
 
   home.sessionVariables = {
     EDITOR = "nvim";

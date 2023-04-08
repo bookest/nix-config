@@ -5,10 +5,10 @@
         "homepage": "",
         "owner": "nix-community",
         "repo": "comma",
-        "rev": "87f7d49716271cb48fb46f939e9f272f202a3728",
-        "sha256": "1djgk54ybhk7r929dhqlz8wwv5fdk0avz4ifymgy7ipsn0xwm29s",
+        "rev": "ef97634016d17cc8cdea396ebcc002320494391a",
+        "sha256": "1cf99s64f606s5lv9s9dg4f5g0whs7rvdxr1lqzybw53pby4fwz4",
         "type": "tarball",
-        "url": "https://github.com/nix-community/comma/archive/87f7d49716271cb48fb46f939e9f272f202a3728.tar.gz",
+        "url": "https://github.com/nix-community/comma/archive/ef97634016d17cc8cdea396ebcc002320494391a.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "home-manager": {
@@ -17,10 +17,10 @@
         "homepage": "https://rycee.gitlab.io/home-manager/",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "67b97020b6970d39b4126a7870063d11337ecb80",
-        "sha256": "0g59760avrmsd1x9kasfpd2lh8mv78f60nl5vlfnpwibs386p2gd",
+        "rev": "440faf5ae472657ef2d8cc7756d77b6ab0ace68d",
+        "sha256": "1by3q13vi8c9pdgxn9xx489m4mygw72dkhbm9gvjxnzqi0mk3y6s",
         "type": "tarball",
-        "url": "https://github.com/nix-community/home-manager/archive/67b97020b6970d39b4126a7870063d11337ecb80.tar.gz",
+        "url": "https://github.com/nix-community/home-manager/archive/440faf5ae472657ef2d8cc7756d77b6ab0ace68d.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
@@ -41,10 +41,10 @@
         "homepage": "",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "f30990fc98b8468eba13d75f6c4c2190a61073ea",
-        "sha256": "1k47vlasr5nrhabc9xaynzhysvm7pilg8l6p5qbag3v81m79nl0y",
+        "rev": "6f95dd4fd050daf017cae2dfeb1cea1ec0e4c1a1",
+        "sha256": "02ald8p1s8jn2iddrxgz2asl9y1p1yr5nj95ik29f0d0hza9d44j",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs/archive/f30990fc98b8468eba13d75f6c4c2190a61073ea.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs/archive/6f95dd4fd050daf017cae2dfeb1cea1ec0e4c1a1.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "pre-commit-hooks": {
@@ -53,10 +53,10 @@
         "homepage": "",
         "owner": "cachix",
         "repo": "pre-commit-hooks.nix",
-        "rev": "29dbe1efaa91c3a415d8b45d62d48325a4748816",
-        "sha256": "13ql527xlhkv3rmn1w307z5c8rb1jcam7c7jmx8k3mkgwzyr9lhn",
+        "rev": "b718acb57c432afe527f89672d00542fcd59fd68",
+        "sha256": "0mhczzgids2d6hy8b0ngsyjg067hpdy5c82ix3ipg407lhzl718r",
         "type": "tarball",
-        "url": "https://github.com/cachix/pre-commit-hooks.nix/archive/29dbe1efaa91c3a415d8b45d62d48325a4748816.tar.gz",
+        "url": "https://github.com/cachix/pre-commit-hooks.nix/archive/b718acb57c432afe527f89672d00542fcd59fd68.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }
