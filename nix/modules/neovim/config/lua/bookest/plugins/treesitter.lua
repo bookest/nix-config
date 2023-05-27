@@ -1,6 +1,6 @@
 require('nvim-treesitter.configs').setup {
   highlight = {
     enable = true,
-    disable = { 'nix', 'kotlin' },
+    disable = { 'bash', 'nix', 'kotlin' },
   },
 }
