@@ -20,10 +20,10 @@ local servers = {
   'gopls',
   'hls',
   'kotlin_language_server',
+  'lua_ls',
   'pyright',
   'rnix',
   'rust_analyzer',
-  'sumneko_lua',
   'tsserver',
 }
 for _, server in ipairs(servers) do
