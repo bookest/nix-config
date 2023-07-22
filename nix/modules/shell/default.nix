@@ -60,7 +60,7 @@ in
         name = "iterm2_shell_integration";
         src = pkgs.fetchurl {
           url = "https://iterm2.com/shell_integration/zsh";
-          sha256 = "sha256-BAeXhk5lkULawozk2oDFek7gh6JhPCG2+ypqUoHl92Q=";
+          sha256 = "sha256-Cq8winA/tcnnVblDTW2n1k/olN3DONEfXrzYNkufZvY";
         };
       }
     ];
