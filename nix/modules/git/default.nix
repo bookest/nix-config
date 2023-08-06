@@ -18,6 +18,15 @@
       ".direnv"
       ".envrc"
     ];
+    delta = {
+      enable = true;
+      options = {
+        hunk-header-style = "omit";
+        hyperlinks = true;
+        line-numbers = true;
+        navigate = true;
+      };
+    };
   };
 
   programs.gh.enable = true;
