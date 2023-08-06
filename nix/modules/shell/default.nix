@@ -42,7 +42,7 @@ in
     enable = true;
     enableCompletion = true;
     enableAutosuggestions = true;
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
     shellAliases = {
       "g" = "git";
       "hm" = "home-manager";
