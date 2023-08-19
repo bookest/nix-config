@@ -52,8 +52,8 @@ in
       ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX="YES";
     };
     envExtra = ''
-      . "${config.home.profileDirectory}/etc/profile.d/nix.sh"
-      . "${config.home.profileDirectory}/etc/profile.d/nix-daemon.sh"
+      . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+      . '/nix/var/nix/profiles/default/etc/profile.d/nix.sh'
     '' ;
     plugins = [
       {
