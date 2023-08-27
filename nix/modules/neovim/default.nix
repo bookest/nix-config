@@ -26,7 +26,6 @@ in
     vimAlias = true;
     vimdiffAlias = true;
     plugins = with pkgs.vimPlugins; [
-      (nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
       cmp-buffer
       cmp-nvim-lsp
       cmp-nvim-lua
@@ -44,6 +43,7 @@ in
       luasnip
       nvim-cmp
       nvim-lspconfig
+      nvim-treesitter.withAllGrammars
       rust-vim
       telescope-nvim
       typescript-vim
