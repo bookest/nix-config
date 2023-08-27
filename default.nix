@@ -6,6 +6,7 @@ in {
   pre-commit-check = nix-pre-commit-hooks.run {
     src = ./.;
     hooks = {
+      convco.enable = true;
       shellcheck.enable = true;
       statix.enable = true;
       stylua.enable = true;
