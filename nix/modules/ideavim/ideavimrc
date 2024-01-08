@@ -1,0 +1,69 @@
+
+set scrolloff=7
+set number
+set relativenumber
+set ideajoin
+set showmode
+set showcmd
+set visualbell
+set clipboard+=unnamed
+
+set incsearch
+
+let mapleader = " "
+
+set commentary
+set highlightedyank
+set nerdtree
+set surround
+
+vmap <leader>ss :sort<CR>
+
+"FIXME: Ctrl-p binding doesn't work :-(
+"map <Ctrl-p> <Action>(GotoFile)
+map <leader>fa <Action>(GotoAction)
+map <leader>fe <Action>(SearchEverywhere)
+map <leader>ff <Action>(GotoFile)
+map <leader>fg <Action>(FindInPath)
+
+map ]t :tabnext<CR>
+map [t :tabprev<CR>
+
+map <Ctrl-w>z <Action>ToggleDistractionFreeMode
+
+map <leader>x :NERDTreeToggle<CR>
+
+" Version Control
+map ]h <Action>(VcsShowNextChangeMarker)
+map [h <Action>(VcsShowPreviousChangeMarker)
+command G action ActivateVersionControlToolWindow
+
+" LSP bindings
+map K <Action>(QuickJavaDoc)
+map ]d <Action>(GotoNextError)
+map [d <Action>(GotoPreviousError)
+map gd <Action>(GotoDeclaration)
+map <leader>gi <Action>(GotoImplementation)
+map <leader>gr <Action>(ShowUsages)
+map <leader>gs <Action>(GotoSymbol)
+map <leader>gt <Action>(GotoTest)
+map <leader>gy <Action>(GotoTypeDeclaration)
+
+" Code Actions
+map <leader>ca <Action>(ShowIntentionActions)
+map <leader>cg <Action>(Generate)
+map <leader>cs <Action>(SurroundWith)
+
+" Refactorings
+map <leader>rn <Action>(RenameElement)
+map <leader>re <Action>(ExtractMethod)
+map <leader>rv <Action>(IntroduceVariable)
+map <leader>rf <Action>(IntroduceField)
+map <leader>rs <Action>(ChangeSignature)
+map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+
+
+
+
+
+

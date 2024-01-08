@@ -7,6 +7,7 @@
 
   imports = [
     ./nix/modules/git
+    ./nix/modules/ideavim
     ./nix/modules/neovim
     ./nix/modules/shell
     ./nix/modules/ssh
