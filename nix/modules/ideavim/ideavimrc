@@ -25,6 +25,7 @@ map <leader>fa <Action>(GotoAction)
 map <leader>fe <Action>(SearchEverywhere)
 map <leader>ff <Action>(GotoFile)
 map <leader>fg <Action>(FindInPath)
+map <leader>fr <Action>(RunAnything)
 
 map ]t :tabnext<CR>
 map [t :tabprev<CR>
