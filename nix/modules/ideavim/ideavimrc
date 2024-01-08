@@ -37,7 +37,6 @@ map <leader>x :NERDTreeToggle<CR>
 " Version Control
 map ]h <Action>(VcsShowNextChangeMarker)
 map [h <Action>(VcsShowPreviousChangeMarker)
-command G action ActivateVersionControlToolWindow
 
 " LSP bindings
 map K <Action>(QuickJavaDoc)
@@ -62,6 +61,11 @@ map <leader>rv <Action>(IntroduceVariable)
 map <leader>rf <Action>(IntroduceField)
 map <leader>rs <Action>(ChangeSignature)
 map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+
+" Tool Windows
+map <leader>tg <Action>(ActivateVersionControlToolWindow)
+map <leader>tt <Action>(ActivateTerminalToolWindow)
+map <leader>th <Action>(HideActiveWindow)
 
 
 
