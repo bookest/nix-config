@@ -15,70 +15,72 @@ in
     pkgs.wget
   ];
 
-  programs.bat = {
-    enable = true;
-    config = {
-      theme = "gruvbox-dark";
-      style = "plain";
+  programs = {
+    bat = {
+      enable = true;
+      config = {
+        theme = "gruvbox-dark";
+        style = "plain";
+      };
     };
-  };
 
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
-
-  programs.eza = {
-    enable = true;
-    enableAliases = true;
-  };
-
-  programs.starship = {
-    enable = true;
-    inherit (starship) settings;
-  };
-
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    enableAutosuggestions = true;
-    syntaxHighlighting.enable = true;
-    shellAliases = {
-      "g" = "git";
-      "hm" = "home-manager";
-      "v" = "nvim";
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
     };
-    localVariables = {
-      ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX="YES";
+
+    eza = {
+      enable = true;
+      enableAliases = true;
     };
-    envExtra = ''
+
+    starship = {
+      enable = true;
+      inherit (starship) settings;
+    };
+
+    zsh = {
+      enable = true;
+      enableCompletion = true;
+      enableAutosuggestions = true;
+      syntaxHighlighting.enable = true;
+      shellAliases = {
+        "g" = "git";
+        "hm" = "home-manager";
+        "v" = "nvim";
+      };
+      localVariables = {
+        ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX="YES";
+      };
+      envExtra = ''
       . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
       . '/nix/var/nix/profiles/default/etc/profile.d/nix.sh'
-    '' ;
-    plugins = [
-      {
-        name = "iterm2_shell_integration";
-        src = pkgs.fetchurl {
-          url = "https://iterm2.com/shell_integration/zsh";
-          sha256 = "sha256-Cq8winA/tcnnVblDTW2n1k/olN3DONEfXrzYNkufZvY";
-        };
-      }
-    ];
-  };
-
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
-  programs.fzf = {
-    enable = true;
-    enableZshIntegration = true;
-    tmux = {
-      enableShellIntegration = true;
-      shellIntegrationOptions = [
-        "-p 80%"
+      '' ;
+      plugins = [
+        {
+          name = "iterm2_shell_integration";
+          src = pkgs.fetchurl {
+            url = "https://iterm2.com/shell_integration/zsh";
+            sha256 = "sha256-Cq8winA/tcnnVblDTW2n1k/olN3DONEfXrzYNkufZvY";
+          };
+        }
       ];
+    };
+
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
+    fzf = {
+      enable = true;
+      enableZshIntegration = true;
+      tmux = {
+        enableShellIntegration = true;
+        shellIntegrationOptions = [
+          "-p 80%"
+        ];
+      };
     };
   };
 }

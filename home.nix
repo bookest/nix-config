@@ -1,9 +1,11 @@
 { config, pkgs, ... }:
 
 {
-  home.username = builtins.getEnv "USER";
-  home.homeDirectory = builtins.getEnv "HOME";
-  home.stateVersion = "22.05";
+  home = {
+    username = builtins.getEnv "USER";
+    homeDirectory = builtins.getEnv "HOME";
+    stateVersion = "22.05";
+  };
 
   imports = [
     ./nix/modules/git
@@ -22,7 +24,7 @@
   nix = {
     package =  pkgs.nix;
     settings = {
-      experimental-features = [ 
+      experimental-features = [
         "nix-command"
         "flakes"
       ];
