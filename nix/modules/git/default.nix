@@ -13,6 +13,7 @@
     };
     extraConfig = {
       init.defaultBranch = "main";
+      branch.sort = "-committerdate";
     };
     ignores = [
       ".direnv"
