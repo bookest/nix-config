@@ -22,7 +22,6 @@ local servers = {
   'kotlin_language_server',
   'lua_ls',
   'pyright',
-  'rnix',
   'rust_analyzer',
   'tsserver',
 }

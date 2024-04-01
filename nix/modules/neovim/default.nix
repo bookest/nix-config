@@ -67,7 +67,6 @@ in
       pkgs.nodePackages.pyright
       pkgs.nodePackages.typescript-language-server
       pkgs.nodePackages.vscode-langservers-extracted
-      pkgs.rnix-lsp
       pkgs.rust-analyzer
       pkgs.shellcheck
     ];

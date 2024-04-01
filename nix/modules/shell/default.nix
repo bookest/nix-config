@@ -31,7 +31,7 @@ in
 
     eza = {
       enable = true;
-      enableAliases = true;
+      enableZshIntegration = true;
     };
 
     starship = {
@@ -42,7 +42,7 @@ in
     zsh = {
       enable = true;
       enableCompletion = true;
-      enableAutosuggestions = true;
+      autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       shellAliases = {
         "g" = "git";
