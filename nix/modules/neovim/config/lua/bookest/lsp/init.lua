@@ -24,6 +24,7 @@ local servers = {
   'pyright',
   'rust_analyzer',
   'tsserver',
+  'zls',
 }
 for _, server in ipairs(servers) do
   require('bookest.lsp.servers.' .. server).setup(on_attach, capabilities)
