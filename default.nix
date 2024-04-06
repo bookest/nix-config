@@ -8,12 +8,16 @@ in {
     hooks = {
       convco.enable = true;
       shellcheck.enable = true;
-      statix.enable = true;
+      statix = {
+        enable = true;
+        settings = {
+          ignore = [
+            "node-env.nix"
+            "sources.nix"
+          ];
+        };
+      };
       stylua.enable = true;
     };
-    settings.statix.ignore = [
-      "node-env.nix"
-      "sources.nix"
-    ];
   };
 }
