@@ -9,6 +9,7 @@
         email = "christopher.grim@gmail.com";
       };
       ui.default-command = "log";
+      ui.editor = "nvim";
     };
   };
 }

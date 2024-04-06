@@ -31,6 +31,7 @@ in
       cmp-nvim-lua
       cmp_luasnip
       customVimPlugins.stylua-nvim
+      customVimPlugins.vim-jjdescription
       direnv-vim
       fidget-nvim
       fugitive
