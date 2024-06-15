@@ -15,6 +15,7 @@
     ./nix/modules/shell
     ./nix/modules/ssh
     ./nix/modules/tmux
+    ./nix/modules/wezterm
   ];
 
   nixpkgs.config = {
