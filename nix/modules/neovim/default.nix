@@ -65,9 +65,9 @@ in
       pkgs.haskell-language-server
       pkgs.kotlin-language-server
       pkgs.lua-language-server
-      pkgs.nodePackages.pyright
       pkgs.nodePackages.typescript-language-server
       pkgs.nodePackages.vscode-langservers-extracted
+      pkgs.pyright
       pkgs.rust-analyzer
       pkgs.shellcheck
     ];
