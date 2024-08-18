@@ -24,6 +24,11 @@ in
     ];
     extraConfig = ''
       set-option -sa terminal-overrides ',xterm-256color:RGB'
+
+      unbind %
+      unbind '"'
+      bind v split-window -h -c "#{pane_current_path}"
+      bind s split-window -v -c "#{pane_current_path}"
     '';
   };
 }
