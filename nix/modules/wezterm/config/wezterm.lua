@@ -12,4 +12,6 @@ config.window_padding = {
 }
 config.font_size = 15.0
 
+config.audible_bell = 'Disabled'
+
 return config
