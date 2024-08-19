@@ -49,22 +49,10 @@ in
         "hm" = "home-manager";
         "v" = "nvim";
       };
-      localVariables = {
-        ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX="YES";
-      };
       envExtra = ''
       . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
       . '/nix/var/nix/profiles/default/etc/profile.d/nix.sh'
       '' ;
-      plugins = [
-        {
-          name = "iterm2_shell_integration";
-          src = pkgs.fetchurl {
-            url = "https://iterm2.com/shell_integration/zsh";
-            sha256 = "sha256-Cq8winA/tcnnVblDTW2n1k/olN3DONEfXrzYNkufZvY";
-          };
-        }
-      ];
     };
 
     zoxide = {
