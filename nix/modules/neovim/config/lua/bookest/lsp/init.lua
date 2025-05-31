@@ -23,7 +23,7 @@ local servers = {
   'lua_ls',
   'pyright',
   'rust_analyzer',
-  'tsserver',
+  'ts_ls',
   'zls',
 }
 for _, server in ipairs(servers) do
