@@ -15,6 +15,12 @@ in
     pkgs.wget
   ];
 
+  home.sessionVariables = {
+    MANPAGER = ''
+      sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'
+    '';
+  };
+
   programs = {
     bat = {
       enable = true;
@@ -49,6 +55,7 @@ in
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       shellAliases = {
+        "cat" = "bat";
         "g" = "git";
         "hm" = "home-manager";
         "v" = "nvim";
