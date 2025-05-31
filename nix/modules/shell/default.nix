@@ -32,6 +32,10 @@ in
     eza = {
       enable = true;
       enableZshIntegration = true;
+      extraOptions = [
+        "--hyperlink"
+      ];
+      icons = "auto";
     };
 
     starship = {
