@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 let
-  customNodePackages = import ../nodejs/default.nix {};
   customVimPlugins = import ./plugins/default.nix {};
 in
 {
@@ -60,7 +59,7 @@ in
     '';
 
     extraPackages = [
-      customNodePackages.bash-language-server
+      pkgs.bash-language-server
       pkgs.gopls
       pkgs.haskell-language-server
       pkgs.kotlin-language-server

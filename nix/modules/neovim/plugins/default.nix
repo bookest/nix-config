@@ -17,15 +17,12 @@
 
   vim-jjdescription = pkgs.vimUtils.buildVimPlugin {
     pname = "vim-jjdescription";
-    version = "2024-04-06";
+    version = "2025-05-31";
     src = pkgs.fetchFromGitHub {
       owner = "avm99963";
       repo = "vim-jjdescription";
-      rev = "c9bf9f849ead3961ae38ab33f68306996e64c6e8";
-      # Enable deep cloning as we get a 404 trying to download the archive of
-      # this rev from GitHub.
-      deepClone = true;
-      sha256 = "sha256-NYtKTT9mUywnWI9z7B3Vlp7raANcIDHr0nWPxUBF0ug=";
+      rev = "c99bff42e7afff356514ae5b3f225665bf10b57c";
+      sha256 = "sha256-IIiBJlGmdYntwqizUy2xB8hhBJBGa1ASK9hmN8xZEvk=";
     };
   };
 }
