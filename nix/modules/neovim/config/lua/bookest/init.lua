@@ -10,6 +10,7 @@ vim.g.termguicolors = true
 vim.g.undodir = vim.fn.expand '~/.config/nvim/undo'
 vim.g.undofile = true
 vim.g.updatetime = 500
+vim.g.netrw_banner = 0
 
 vim.o.expandtab = true
 vim.o.scrolloff = 7
