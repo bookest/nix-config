@@ -6,6 +6,7 @@
     userName = "Christopher Grim";
     userEmail = "christopher.grim@gmail.com";
     aliases = {
+      amend = "commit --amend";
       ci = "commit";
       co = "checkout";
       diffc = "diff --cached";
