@@ -11,6 +11,7 @@
     ./nix/modules/git
     ./nix/modules/ideavim
     ./nix/modules/jj
+    ./nix/modules/llm
     ./nix/modules/neovim
     ./nix/modules/shell
     ./nix/modules/ssh
