@@ -59,6 +59,7 @@ in
     '';
 
     extraPackages = [
+      pkgs.asm-lsp
       pkgs.bash-language-server
       pkgs.gopls
       pkgs.haskell-language-server
