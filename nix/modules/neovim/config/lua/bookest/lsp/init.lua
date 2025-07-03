@@ -9,6 +9,7 @@ local on_attach = function(_, bufnr)
   vim.keymap.set('n', ']d', function()
     vim.diagnostic.jump { count = 1, float = true }
   end, opts)
+  vim.keymap.set('n', '<leader>ds', vim.diagnostic.open_float, opts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
