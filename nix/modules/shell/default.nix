@@ -12,6 +12,7 @@ in
     pkgs.fd
     pkgs.nix-index
     pkgs.ripgrep
+    pkgs.uv
     pkgs.wget
   ];
 
