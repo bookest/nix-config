@@ -33,6 +33,8 @@
 
   programs.gh.enable = true;
 
+  xdg.configFile."git/hooks".source = ./scripts/hooks;
+
   home.packages = [
     pkgs.gibo
   ];

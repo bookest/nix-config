@@ -1,0 +1,24 @@
+#!/bin/sh
+
+COMMIT_MSG_FILE="$1"
+COMMIT_SOURCE="$2"
+
+if [ -z "$COMMIT_SOURCE" ]; then
+  prompt=$(cat << 'EOF'
+Generate a commit message for this diff following the conventional commit
+standard. Focus on explaining why the changes are being made rather than on
+what is being changed. It's okay to leave the body of the commit blank if the
+one line summary is enough to describe the commit.
+
+Output only the text of the commit message in a format that can be passed to
+`git commit -m "<message>"`'
+EOF
+)
+  git diff --cached | gemini --model gemini-2.5-flash --prompt "$prompt" > "$COMMIT_MSG_FILE"
+  cat <<EOF >> "$COMMIT_MSG_FILE"
+
+# WARNING: ============================================================
+# WARNING: AI GENERATED - VERIFY BEFORE COMMITTING!
+# WARNING: ============================================================
+EOF
+fi
