@@ -60,6 +60,7 @@ local servers = {
     },
   },
   { 'pyright' },
+  { 'ruff', { cmd = { 'uvx', 'ruff', 'server' } } },
   { 'rust_analyzer' },
   { 'ts_ls' },
   { 'zls' },
