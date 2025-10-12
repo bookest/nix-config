@@ -18,22 +18,59 @@ end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+vim.lsp.config('*', {
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
 local servers = {
-  'asm_lsp',
-  'bashls',
-  'clangd',
-  'eslint',
-  'gopls',
-  'hls',
-  'kotlin_language_server',
-  'lua_ls',
-  'pyright',
-  'rust_analyzer',
-  'ts_ls',
-  'zls',
+  { 'asm_lsp' },
+  { 'bashls' },
+  { 'clangd' },
+  { 'eslint' },
+  { 'gopls' },
+  { 'hls' },
+  { 'kotlin_language_server' },
+  {
+    'lua_ls',
+    {
+      settings = (function()
+        local runtime_path = vim.split(package.path, ';')
+        table.insert(runtime_path, 'lua/?.lua')
+        table.insert(runtime_path, 'lua/?/init.lua')
+        return {
+          Lua = {
+            runtime = {
+              version = 'LuaJIT',
+              path = runtime_path,
+            },
+            diagnostics = {
+              globals = { 'vim' },
+            },
+            workspace = {
+              library = vim.api.nvim_get_runtime_file('', true),
+              checkThirdParty = false,
+            },
+            telemetry = {
+              enable = false,
+            },
+          },
+        }
+      end)(),
+    },
+  },
+  { 'pyright' },
+  { 'rust_analyzer' },
+  { 'ts_ls' },
+  { 'zls' },
 }
-for _, server in ipairs(servers) do
-  require('bookest.lsp.servers.' .. server).setup(on_attach, capabilities)
+
+for _, lsp in pairs(servers) do
+  local name, config = lsp[1], lsp[2]
+  vim.lsp.enable(name)
+  if config then
+    vim.lsp.config(name, config)
+  end
 end
 
 require('fidget').setup {}
