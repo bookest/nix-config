@@ -10,6 +10,7 @@
   imports = [
     ./nix/modules/git
     ./nix/modules/ideavim
+    ./nix/modules/fonts
     ./nix/modules/jj
     ./nix/modules/llm
     ./nix/modules/neovim
