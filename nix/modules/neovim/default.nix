@@ -67,7 +67,7 @@ in
       pkgs.lua-language-server
       pkgs.nodePackages.typescript-language-server
       pkgs.nodePackages.vscode-langservers-extracted
-      pkgs.pyright
+      pkgs.pyrefly
       pkgs.rust-analyzer
       pkgs.shellcheck
     ];

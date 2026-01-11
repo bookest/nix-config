@@ -59,11 +59,10 @@ local servers = {
       end)(),
     },
   },
-  { 'pyright' },
+  { 'pyrefly' },
   { 'ruff', { cmd = { 'uvx', 'ruff', 'server' } } },
   { 'rust_analyzer' },
   { 'ts_ls' },
-  { 'ty', { cmd = { 'uvx', 'ty', 'server' } } },
   { 'zls' },
 }
 
