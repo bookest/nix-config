@@ -11,6 +11,7 @@ in
 {
   home.packages = [
     llm-python
+    pkgs.beads
     pkgs.gemini-cli
     pkgs.ollama
   ];
