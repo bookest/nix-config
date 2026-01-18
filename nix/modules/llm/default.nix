@@ -16,8 +16,16 @@ in
   ];
 
   home.file.".gemini/settings.json".text = toJSON {} {
-    theme = "ANSI";
-    selectedAuthType = "oauth-personal";
-    preferredEditor = "vim";
+    general = {
+      preferredEditor = "vim";
+    };
+    security = {
+      auth = {
+        selectedType = "oauth-personal";
+      };
+    };
+    ui = {
+      theme = "ANSI";
+    };
   };
 }
