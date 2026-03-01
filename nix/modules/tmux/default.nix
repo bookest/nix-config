@@ -6,6 +6,7 @@ let
 in
 {
   home.packages = [
+    pkgs.btop
     pkgs.fzf
     scripts.tmx-attach
   ] ++ lib.optional isDarwin pkgs.reattach-to-user-namespace;
@@ -29,6 +30,9 @@ in
       unbind '"'
       bind v split-window -h -c "#{pane_current_path}"
       bind s split-window -v -c "#{pane_current_path}"
+
+      unbind t
+      bind t display-popup -h 80% -w 80% -E btop
     '';
   };
 }
