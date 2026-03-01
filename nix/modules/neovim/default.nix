@@ -33,7 +33,6 @@ in
       customVimPlugins.vim-jjdescription
       direnv-vim
       fidget-nvim
-      fugitive
       gitsigns-nvim
       gruvbox-material
       harpoon
@@ -49,6 +48,7 @@ in
       typescript-vim
       vim-better-whitespace
       vim-commentary
+      vim-fugitive
       vim-go
       vim-nix
       vim-surround
