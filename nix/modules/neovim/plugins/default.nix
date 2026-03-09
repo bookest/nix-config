@@ -25,4 +25,15 @@
       sha256 = "sha256-IIiBJlGmdYntwqizUy2xB8hhBJBGa1ASK9hmN8xZEvk=";
     };
   };
+
+  r-nvim = pkgs.vimUtils.buildVimPlugin {
+    pname = "r-nvim";
+    version = "2026-03-06";
+    src = pkgs.fetchFromGitHub {
+      owner = "R-nvim";
+      repo = "R.nvim";
+      rev = "6004610f205809d5471278d9806552abd261fd47";
+      sha256 = "sha256-pig09ih+UNvursL0+SjN3yisGHYEV7U8epJApeza2Hc=";
+    };
+  };
 }

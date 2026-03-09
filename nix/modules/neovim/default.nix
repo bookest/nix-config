@@ -31,6 +31,7 @@ in
       cmp_luasnip
       customVimPlugins.stylua-nvim
       customVimPlugins.vim-jjdescription
+      customVimPlugins.r-nvim
       direnv-vim
       fidget-nvim
       gitsigns-nvim
