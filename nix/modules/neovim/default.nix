@@ -24,6 +24,9 @@ in
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
+    withPerl = false;
+    withPython3 = false;
+    withRuby = false;
     plugins = with pkgs.vimPlugins; [
       cmp-buffer
       cmp-nvim-lsp
@@ -66,11 +69,11 @@ in
       pkgs.haskell-language-server
       pkgs.kotlin-language-server
       pkgs.lua-language-server
-      pkgs.nodePackages.typescript-language-server
-      pkgs.nodePackages.vscode-langservers-extracted
       pkgs.pyrefly
       pkgs.rust-analyzer
       pkgs.shellcheck
+      pkgs.typescript-language-server
+      pkgs.vscode-langservers-extracted
     ];
   };
 

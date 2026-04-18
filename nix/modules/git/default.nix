@@ -20,6 +20,7 @@
       init.defaultBranch = "main";
       branch.sort = "-committerdate";
     };
+    signing.format = null;
   };
 
   programs.delta = {
