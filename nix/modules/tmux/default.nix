@@ -24,6 +24,9 @@ in
       pkgs.tmuxPlugins.gruvbox
     ];
     extraConfig = ''
+      set -g allow-passthrough on
+      set -g set-clipboard on
+
       set-option -sa terminal-overrides ',xterm-256color:RGB'
 
       unbind %
