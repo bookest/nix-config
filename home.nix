@@ -21,8 +21,9 @@
   ];
 
   nixpkgs.config = {
-    allowUnsupportedSystem = true;
     allowBroken = true;
+    allowUnfree = true;
+    allowUnsupportedSystem = true;
   };
 
   nix = {
