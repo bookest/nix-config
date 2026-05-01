@@ -14,6 +14,8 @@ config.font_size = 15.0
 
 config.audible_bell = 'Disabled'
 
+config.notification_handling = 'AlwaysShow'
+
 config.keys = {
   {
     key = 'F',
