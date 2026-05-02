@@ -33,8 +33,8 @@ end
 
 config.keys = {
   {
-    key = 'F',
-    mods = 'SHIFT|CTRL',
+    key = 'f',
+    mods = 'CMD',
     action = wezterm.action.QuickSelectArgs {
       patterns = { 'https?://\\S+' },
       action = wezterm.action_callback(function(window, pane)
