@@ -16,6 +16,21 @@ config.audible_bell = 'Disabled'
 
 config.notification_handling = 'AlwaysShow'
 
+-- Bind Cmd-@key to send C-t @tmux_key to allow passing a key sequence through to tmux.
+--
+-- If @tmux_key is not specified it defaults to @key.
+local function tmux_passthrough(key, tmux_key)
+  tmux_key = tmux_key or key
+  return {
+    key = key,
+    mods = 'CMD',
+    action = wezterm.action.Multiple {
+      wezterm.action.SendKey { key = 't', mods = 'CTRL' },
+      wezterm.action.SendKey { key = tmux_key },
+    },
+  }
+end
+
 config.keys = {
   {
     key = 'F',
@@ -29,6 +44,15 @@ config.keys = {
       end),
     },
   },
+  tmux_passthrough('b', 't'),
+  tmux_passthrough('p', 'w'),
+  tmux_passthrough 's',
+  tmux_passthrough 'v',
+  tmux_passthrough 'z',
+  tmux_passthrough 'h',
+  tmux_passthrough 'j',
+  tmux_passthrough 'k',
+  tmux_passthrough 'l',
 }
 
 return config
