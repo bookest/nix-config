@@ -26,6 +26,7 @@ in
     extraConfig = ''
       set -g allow-passthrough on
       set -g set-clipboard on
+      set -g focus-events on
 
       set-option -sa terminal-overrides ',xterm-256color:RGB'
 
