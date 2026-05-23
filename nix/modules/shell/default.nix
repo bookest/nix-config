@@ -23,6 +23,10 @@ in
     '';
   };
 
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
+
   programs = {
     bat = {
       enable = true;
