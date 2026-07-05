@@ -27,6 +27,9 @@ in
       set -g allow-passthrough on
       set -g set-clipboard on
       set -g focus-events on
+      # Added for pi: <https://pi.dev/docs/latest/tmux>
+      set -g extended-keys on
+      set -g extended-keys-format csi-u
 
       set-option -sa terminal-overrides ',xterm-256color:RGB'
 

@@ -9,6 +9,28 @@ let
   ]);
 in
 {
+  programs.pi-coding-agent = {
+    enable = true;
+    extraPackages = [
+      pkgs.nodejs
+      pkgs.bun
+    ];
+    models = {
+      providers = {
+        ollama = {
+          api = "openai-completions";
+          apiKey = "ollama";
+          baseUrl = "http://localhost:11434/v1";
+          models = [
+            {
+              id = "qwen3.5:9b-mlx";
+            }
+          ];
+        };
+      };
+    };
+  };
+
   home.packages = [
     llm-python
     pkgs.beads
