@@ -9,6 +9,7 @@
 
   imports = [
     ./nix/modules/git
+    ./nix/modules/herdr
     ./nix/modules/ideavim
     ./nix/modules/fonts
     ./nix/modules/jj

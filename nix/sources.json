@@ -11,16 +11,28 @@
         "url": "https://github.com/nix-community/comma/archive/9426c4160651d21be00b179a11849973a2f39787.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "herdr": {
+        "branch": "master",
+        "description": "agent multiplexer that lives in your terminal.",
+        "homepage": "https://herdr.dev",
+        "owner": "ogulcancelik",
+        "repo": "herdr",
+        "rev": "0f161fac287011b3e216383e2b8482f049fd6a7b",
+        "sha256": "18y3c6c905n8fkba7pn8x6v6z7h8hzlifyi6lzlsv008jgaj5xfy",
+        "type": "tarball",
+        "url": "https://github.com/ogulcancelik/herdr/archive/0f161fac287011b3e216383e2b8482f049fd6a7b.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "home-manager": {
         "branch": "master",
         "description": "Manage a user environment using Nix",
         "homepage": "https://rycee.gitlab.io/home-manager/",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "a1645f40777620c4bd2b6d854b290c2fc354a266",
-        "sha256": "1lnn7g9h5g46m88nll2s8p33is9pnf6bv3368cjyyk7pgqpjbw8k",
+        "rev": "39411a8e12a5526d992e65bc7e3dc9a4414d6713",
+        "sha256": "1irm9785d6mj55256qjrag5i60xrdw5ihjzfnzpnj98378fz36l9",
         "type": "tarball",
-        "url": "https://github.com/nix-community/home-manager/archive/a1645f40777620c4bd2b6d854b290c2fc354a266.tar.gz",
+        "url": "https://github.com/nix-community/home-manager/archive/39411a8e12a5526d992e65bc7e3dc9a4414d6713.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
@@ -41,10 +53,10 @@
         "homepage": "",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c4013e501c048ae7c4a8940c92837636042bf6c3",
-        "sha256": "0rigw5wkydcan4ifl2cmy7sym18i7ydkkj93msbdw0a2vqdb3ggm",
+        "rev": "b471514bed69eff5255c8e63c1f80e5fe56c616f",
+        "sha256": "1f91ffwpnabz88s1zk3nhjzg8rkjwm4hpvd2y2i2zfjqq5prk4ff",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs/archive/c4013e501c048ae7c4a8940c92837636042bf6c3.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs/archive/b471514bed69eff5255c8e63c1f80e5fe56c616f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "pre-commit-hooks": {
@@ -53,10 +65,10 @@
         "homepage": "",
         "owner": "cachix",
         "repo": "pre-commit-hooks.nix",
-        "rev": "bca82caa46d5ec0f5d422c61fb1e30bc51313cbe",
-        "sha256": "1d49z215c9cd1p256ay1vhgz5mxq17mfcxis9abxb31ixgmv4s4c",
+        "rev": "43b3c1ab9d40fb1dbb008f451988a91e375825e9",
+        "sha256": "03q0d8rd27i6sd7yhy27z8hrfv7slxa7q6izfimfbzibp1l4gr25",
         "type": "tarball",
-        "url": "https://github.com/cachix/pre-commit-hooks.nix/archive/bca82caa46d5ec0f5d422c61fb1e30bc51313cbe.tar.gz",
+        "url": "https://github.com/cachix/pre-commit-hooks.nix/archive/43b3c1ab9d40fb1dbb008f451988a91e375825e9.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }
