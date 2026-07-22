@@ -45,7 +45,7 @@ in
       enable = true;
       enableZshIntegration = true;
       extraOptions = [
-        "--hyperlink"
+        "--hyperlink=auto"
       ];
       icons = "auto";
     };
